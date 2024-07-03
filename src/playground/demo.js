@@ -97,3 +97,34 @@ console.log(greeting);
 const greet1 = name => 'Hello: ' + name;
 const greeting1 = greet1('w2lz');
 console.log(greeting1);
+
+// 方法
+
+const book1 = {
+    title: '小白兔的开发之路',
+    toString() {
+        return `《${this.title}》`;
+    }
+}
+console.log(book1.toString());
+
+// 解构对象
+const book2 = {
+    title2: '小白兔的开发之路',
+    author2: 'w2lz',
+}
+const {title2, author2} = book2;
+console.log(title2);
+console.log(author2);
+
+const {title2: title2Alias, author2: authorAlias} = book2;
+console.log(title2Alias);
+console.log(authorAlias)
+
+// 解构数组
+const fruits = ['苹果','香蕉','桔子'];
+const [fruit1, fruit2, fruit3] = fruits;
+console.log(fruits);
+console.log(fruit1)
+console.log(fruit2)
+console.log(fruit3)
