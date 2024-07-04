@@ -128,3 +128,127 @@ console.log(fruits);
 console.log(fruit1)
 console.log(fruit2)
 console.log(fruit3)
+
+// 展开数组
+const vegetables = ['土豆', '茄子', '辣椒'];
+const food = [...fruits, ...vegetables];
+console.log(food);
+
+// 展开对象
+const data = {
+    title: '小白兔的开发之路',
+}
+
+const author1 = {
+    name: 'w2lz',
+}
+
+const book3 = {
+    ...data,
+    author1
+}
+console.log(book3);
+
+// if
+let speed1 = 100;
+speed1 = 125;
+if (speed1 > 120) {
+    console.log('您已超速');
+} else {
+    console.log('车速正常～');
+}
+
+// switch
+let  gear = 'P';
+gear = 'D';
+switch (gear) {
+    case 'P':
+        console.log('停车');
+        break;
+    case 'R':
+        console.log('倒车');
+        break;
+    case 'D':
+        console.log('开车');
+        break;
+    case 'N':
+        console.log('空档');
+        break;
+    default:
+        console.log('档位异常！');
+        break;
+}
+
+// throw
+const drive = () => {
+    throw new Error('没油了！');
+}
+// drive();
+
+// try...catch
+const getGasoline= () => {
+    return true;
+}
+
+const drive1 = () => {
+    const gasoline = getGasoline();
+
+    if (!gasoline) {
+        throw new Error('没油了！');
+    }
+    console.log('呜呜呜');
+}
+
+try {
+    drive1();
+}catch (error) {
+    console.log(error.message);
+}
+
+// 类
+class Car {
+    engine;
+    drive() {
+        console.log('呜呜呜~~');
+    }
+}
+
+const c1 = new Car();
+c1.drive();
+console.log(c1);
+
+// 构造方法
+class NewCar {
+    engine;
+    constructor() {
+        console.log('一辆崭新的汽车');
+    }
+    drive() {
+        console.log('呜呜呜~~');
+    }
+}
+const c2 = new NewCar();
+c2.drive();
+console.log(c2);
+
+// this
+class NewCarByEngine {
+    engine;
+    constructor(engine) {
+        this.engine = engine;
+        console.log('一辆崭新的汽车');
+    }
+    drive() {
+        console.log('呜呜呜~~');
+    }
+}
+const c3 = new NewCarByEngine('V8');
+const c4 = new NewCarByEngine('V12');
+console.log(c3,c4);
+
+// 继承
+class PickupTruck extends NewCarByEngine {}
+
+const p1 = new PickupTruck('V8');
+p1.drive();
+console.log(p1);
