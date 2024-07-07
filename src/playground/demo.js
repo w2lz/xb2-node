@@ -252,3 +252,25 @@ class PickupTruck extends NewCarByEngine {}
 const p1 = new PickupTruck('V8');
 p1.drive();
 console.log(p1);
+
+// filter
+const data1 = [
+    {
+        title: '肖申克的救赎',
+        rating: 9.7,
+    },
+    {
+        title: '霸王别姬',
+        rating: 9.6,
+    },
+    {
+        title: '蝴蝶效应',
+        rating: 8.8,
+    },
+];
+const results = data1.filter(item => item.rating > 9);
+const results1 = data1.filter(item => {
+    return item.rating > 9;
+});
+console.log(results);
+console.log(results1);
