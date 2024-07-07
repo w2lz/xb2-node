@@ -2,5 +2,8 @@
   "name": "xb2-node",
   "version": "1.0.0",
   "description": "《小白兔的开发之路》演示项目",
-  "author": "w2lz <wang2lengzi@88.com>"
+  "author": "w2lz <wang2lengzi@88.com>",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
