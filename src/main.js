@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 const port = 3000
 
+/**
+ * 使用 JSON 中间件
+ */
+
+app.use(express.json());
+
 app.listen(port, () => {
    console.log('🚀 服务已启动！');
 });
@@ -39,4 +45,26 @@ app.get('/posts/:postId', (request, response) => {
    const posts = data.filter(item => item.id == postId);
    // 做出响应
    response.send(posts);
+});
+
+/**
+ * 创建内容
+ */
+app.post('/posts', (request, response) => {
+   // 获取请求里面的数据
+   const {content} = request.body;
+
+   // 设置相应状态码
+   response.status(201);
+
+   // 输出请求头部数据
+   console.log(request.headers['sing-along']);
+
+   // 设置响应头部数据
+   response.set('Sing-Along', 'How I wonder what you are!');
+
+   // 作出响应
+   response.send({
+      message: `成功创建了内容：${content}`
+   });
 });
