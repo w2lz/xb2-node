@@ -10,6 +10,9 @@ export const index = (
   response: Response,
   next: NextFunction,
 ) => {
-  const data = getPosts();
-  response.send(data);
+  if (request.headers.authorization !== 'SECRET') {
+    return next(new Error());
+  }
+  const posts = getPosts();
+  response.send(posts);
 };
