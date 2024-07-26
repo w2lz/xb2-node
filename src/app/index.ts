@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(postRouter);
 
 /**
- * more女异常处理器
+ * 默认异常处理器
  */
 app.use(defaultErrorhandler);
 
