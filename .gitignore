@@ -22,6 +22,6 @@ npm-debug.log*
 .idea/
 
 # App
- .env*
- config/*.key
+.env*
+config/*.key
 /uploads
